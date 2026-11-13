@@ -31,3 +31,1475 @@ body{
     radial-gradient(60% 45% at 0% 0%,rgba(110,160,230,.32),transparent 70%),
     radial-gradient(55% 45% at 100% 100%,rgba(255,150,30,.28),transparent 70%),
     linear-gradient(180deg,#171b23,#10131a);
+  background-attachment:fixed;
+  padding-bottom:calc(6rem + var(--safe-b));
+}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* --- لوح زجاجي بإطار شفاف ولمعة حافة --- */
+.glass-panel{
+  position:relative;background:var(--glass-fill),rgba(24,29,38,.55);
+  backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid var(--glass-edge);border-radius:22px;
+  box-shadow:0 18px 40px -12px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.03);
+}
+.glass-panel::before{
+  content:"";position:absolute;top:0;left:12%;right:12%;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+}
+header.glass-panel{border-radius:0 0 22px 22px;border-top:0}
+.glass-nav{
+  background:linear-gradient(180deg,rgba(40,48,62,.78),rgba(18,21,28,.92));
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-top:1px solid rgba(255,255,255,.2);border-radius:24px 24px 0 0;
+  padding-bottom:calc(.5rem + var(--safe-b));box-shadow:0 -14px 34px rgba(0,0,0,.45);
+}
+
+/* --- خلايا داخلية ناعمة (أسطح بارزة بإضاءة حافة زرقاء/برتقالية) --- */
+body [class*="bg-slate-900"]:not(.fixed):not(.absolute),
+body [class*="bg-slate-950"]:not(.fixed):not(.absolute){
+  background:linear-gradient(150deg,#2b3342,#1b212c)!important;
+  border-color:rgba(143,184,240,.22)!important;border-radius:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),8px 10px 22px rgba(0,0,0,.4),-3px -3px 12px rgba(143,184,240,.07);
+}
+body button[class*="bg-slate-800"]:not(.absolute){
+  background:linear-gradient(150deg,#323b4c,#222936)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),4px 5px 12px rgba(0,0,0,.4);
+}
+/* تحديد نشط: إضاءة برتقالية خلف السطح مثل الصورة الثالثة */
+.neon-border-active{
+  border-color:var(--amber)!important;
+  box-shadow:0 0 0 1px rgba(255,180,0,.55),0 10px 26px rgba(255,150,0,.32),inset 0 1px 0 rgba(255,255,255,.25)!important;
+}
+.neon-text-cyan{text-shadow:0 0 14px rgba(255,180,0,.55)}
+
+/* --- إعادة تلوين: السماوي ← أزرق فولاذي، والتمييز الأساسي ← كهرماني --- */
+body .text-cyan-300{color:#b9d3f7}
+body .text-cyan-400{color:var(--steel)}
+body .text-sky-300{color:#a9cbf5}
+body .border-cyan-400\/30,body .border-cyan-400\/40,body .border-cyan-500\/20,body .border-cyan-500\/30,body .border-sky-500\/20,body .border-sky-500\/30{border-color:rgba(143,184,240,.35)}
+body .border-r-cyan-400{border-right-color:var(--steel)}
+body .bg-cyan-500\/15,body .bg-cyan-500\/20{background:rgba(143,184,240,.16)}
+body .bg-cyan-950{background:rgba(61,111,184,.35)}
+body .bg-gradient-to-br.from-cyan-400,
+body .bg-gradient-to-r.from-cyan-500{
+  background-image:linear-gradient(180deg,#ffc933 0%,#ffb400 45%,#e07a00 100%);
+  color:#2a1800;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 24px rgba(255,150,0,.35);
+}
+body .bg-gradient-to-r.from-emerald-500{
+  background-image:linear-gradient(180deg,#6aa8ff,#2f6fd6 55%,#2358b0);color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 24px rgba(47,111,214,.4);
+}
+body .shadow-cyan-500\/30,body .shadow-emerald-500\/25{--tw-shadow-color:transparent}
+body #measure-echo-btn:active{transform:scale(.98)}
+/* التبويب النشط في الشريط السفلي */
+body .nav-btn.text-cyan-400{color:var(--amber);background:linear-gradient(180deg,rgba(255,180,0,.2),rgba(255,180,0,.05));box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 1px rgba(255,180,0,.3)}
+
+/* --- بطاقات البرامج الذكية: زجاج ملوّن لامع (الصورة الأولى) --- */
+#tab-generator .grid-cols-2>button{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.3);border-radius:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 14px 26px -8px rgba(0,0,0,.55)}
+#tab-generator .grid-cols-2>button::after{content:"";position:absolute;inset:auto -10% 38% -10%;height:60%;pointer-events:none;
+  background:radial-gradient(120% 100% at 50% 100%,rgba(255,255,255,.18),transparent 70%);border-radius:50% 50% 0 0}
+#tab-generator .grid-cols-2>button:nth-child(1){background:linear-gradient(150deg,#47a0ff,#0f5fd0)}
+#tab-generator .grid-cols-2>button:nth-child(2){background:linear-gradient(150deg,#2fd0e0,#0a8aa0)}
+#tab-generator .grid-cols-2>button:nth-child(3){background:linear-gradient(150deg,#8c86f0,#4b3fb0)}
+#tab-generator .grid-cols-2>button:nth-child(4){background:linear-gradient(150deg,#ffa23a,#e5541a)}
+#tab-generator .grid-cols-2>button div[class*="text-"]:last-child{color:rgba(255,255,255,.82)}
+
+/* --- شريط التردد --- */
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;background:transparent;height:32px}
+input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:999px;border:1px solid rgba(143,184,240,.3);
+  background:linear-gradient(90deg,#3d6fb8,#8fb8f0 55%,#ffb400);box-shadow:inset 0 2px 4px rgba(0,0,0,.5)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-10px;border-radius:50%;cursor:pointer;
+  background:radial-gradient(circle at 35% 30%,#fff3c4,#ffb400 55%,#e07a00);border:2px solid #fff;box-shadow:0 0 0 4px rgba(255,180,0,.2),0 6px 14px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-track{height:10px;border-radius:999px;background:linear-gradient(90deg,#3d6fb8,#8fb8f0 55%,#ffb400)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#ffb400;border:2px solid #fff}
+
+/* --- طيّة ورقية على بطاقة الرادار (الصورة الثانية) --- */
+#tab-fault>.glass-panel:first-child::after{
+  content:"";position:absolute;bottom:0;left:0;width:46px;height:46px;pointer-events:none;border-radius:0 18px 0 22px;
+  background:linear-gradient(45deg,var(--bg) 50%,#ffd35a 50%,#e89400 78%,#b86200 100%);
+  filter:drop-shadow(3px -3px 6px rgba(0,0,0,.55));
+}
+
+/* --- حاويات الرسوم --- */
+.canvas-container{
+  position:relative;width:100%;border-radius:18px;overflow:hidden;
+  background:radial-gradient(90% 120% at 15% 0%,rgba(110,160,230,.2),transparent 60%),radial-gradient(80% 100% at 100% 100%,rgba(255,150,30,.16),transparent 60%),#0d1118;
+  border:1px solid rgba(143,184,240,.28);box-shadow:inset 0 0 30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.1);
+}
+canvas{display:block;width:100%;height:100%}
+
+@keyframes pulse-ring{0%{transform:scale(.92);opacity:.8}70%,100%{transform:scale(1.15);opacity:0}}
+.radar-pulse{animation:pulse-ring 2s cubic-bezier(.215,.61,.355,1) infinite}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+button{transition:transform .15s ease,box-shadow .2s ease,filter .2s ease}
+button:active{transform:scale(.97)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+    <!-- الشريط العلوي (Header) -->
+    <header class="sticky top-0 z-30 glass-panel border-b border-sky-500/20 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <!-- أيقونة الرادار SVG -->
+                <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10M12 6a6 6 0 1 0 6 6M12 10a2 2 0 1 0 2 2m0 0 6-6" />
+                </svg>
+                <span id="live-dot" class="hidden absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950 animate-ping"></span>
+            </div>
+            <div>
+                <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-white leading-tight">الرادار الصوتي الخفي</h1>
+                <p class="text-[11px] text-cyan-400 font-medium">Acoustic X-Ray & Bio-Radar</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <!-- مؤشر حالة الميكروفون -->
+            <button id="mic-toggle-btn" onclick="toggleMicrophone()" class="px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-300 bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 active:scale-95">
+                <span id="mic-status-indicator" class="w-2 h-2 rounded-full bg-rose-500"></span>
+                <span id="mic-btn-text">تشغيل الرادار</span>
+            </button>
+
+            <!-- زر معلومات التطبيق -->
+            <button onclick="openAboutModal()" aria-label="حول التطبيق" class="p-2.5 rounded-xl glass-panel text-slate-300 hover:text-cyan-400 active:scale-95 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- شريط التنبيهات الذكية (Smart Toast Banner) -->
+    <div id="status-banner" class="mx-4 mt-3 px-4 py-2.5 rounded-xl glass-panel border-r-4 border-r-cyan-400 flex items-center justify-between text-xs text-slate-200 transition-all">
+        <div class="flex items-center gap-2">
+            <span class="text-cyan-400 text-base">⚡</span>
+            <span id="status-banner-text">اضغط على "تشغيل الرادار" لتفعيل المستشعر الصوتي عالي الدقة.</span>
+        </div>
+        <span id="sample-rate-badge" class="text-[10px] font-mono bg-slate-800/90 px-2 py-0.5 rounded text-cyan-300 border border-slate-700">-- kHz</span>
+    </div>
+
+    <!-- بطاقة مساعدة صلاحية الميكروفون (تظهر عند الفشل فقط) -->
+    <div id="mic-help" class="hidden mx-4 mt-3 p-4 rounded-2xl glass-panel border border-rose-500/40 text-xs text-slate-200 space-y-2">
+        <div id="mic-help-title" class="font-extrabold text-rose-300 text-sm">تعذر تشغيل الميكروفون</div>
+        <div id="mic-help-body" class="leading-relaxed text-slate-300"></div>
+        <div class="flex gap-2 pt-1">
+            <button onclick="retryMicrophone()" class="flex-1 py-2 rounded-xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950">🔄 إعادة المحاولة</button>
+            <button onclick="document.getElementById('mic-help').classList.add('hidden')" class="px-4 py-2 rounded-xl font-bold bg-slate-800 text-slate-300">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي المتغير حسب التبويب -->
+    <main class="flex-1 px-4 pt-3 pb-6 max-w-2xl w-full mx-auto space-y-4">
+
+        <!-- ========================================================= -->
+        <!-- 1. تبويب: كاشف الأعطال الميكانيكية والتسريبات غير المسموعة -->
+        <!-- ========================================================= -->
+        <section id="tab-fault" class="tab-view space-y-4">
+            <!-- بطاقة الرادار الدائري والتشخيص الفوري -->
+            <div class="glass-panel rounded-2xl p-4 relative overflow-hidden">
+                <div class="flex items-center justify-between mb-3">
+                    <div>
+                        <h2 class="text-sm font-bold text-white flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                            رادار الأعطال الميكانيكية والتسريبات
+                        </h2>
+                        <p class="text-[11px] text-slate-400">تحليل FFT للترددات فوق السمعية والاهتزازات الدقيقة</p>
+                    </div>
+                    <span id="fault-risk-badge" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                        في انتظار المسح
+                    </span>
+                </div>
+
+                <!-- رادار بصري تفاعلي -->
+                <div class="canvas-container h-52 my-2">
+                    <canvas id="radar-canvas"></canvas>
+                    <!-- قراءات عائمة فوق الرادار -->
+                    <div class="absolute top-2.5 right-3 bg-slate-950/75 backdrop-blur-md px-2.5 py-1 rounded-lg border border-cyan-500/20 text-[11px]">
+                        <span class="text-slate-400">التردد المهيمن:</span>
+                        <span id="fault-peak-freq" class="font-mono font-bold text-cyan-300 mr-1">0 Hz</span>
+                    </div>
+                    <div class="absolute top-2.5 left-3 bg-slate-950/75 backdrop-blur-md px-2.5 py-1 rounded-lg border border-cyan-500/20 text-[11px]">
+                        <span class="text-slate-400">الطاقة:</span>
+                        <span id="fault-db" class="font-mono font-bold text-emerald-400 mr-1">-90 dB</span>
+                    </div>
+                    <div class="absolute bottom-2.5 right-3 left-3 bg-slate-950/85 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-800 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400">التشخيص الآلي:</span>
+                        <span id="fault-diagnosis-text" class="text-xs font-bold text-cyan-300">جاهز لفحص المحركات والأنابيب</span>
+                    </div>
+                </div>
+
+                <!-- مؤشرات القياس التفصيلية -->
+                <div class="grid grid-cols-3 gap-2.5 mt-3">
+                    <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-2.5 text-center">
+                        <div class="text-[10px] text-slate-400 mb-0.5">استقرار التردد</div>
+                        <div id="metric-stability" class="text-sm font-extrabold font-mono text-emerald-400">-- %</div>
+                    </div>
+                    <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-2.5 text-center">
+                        <div class="text-[10px] text-slate-400 mb-0.5">التشوه التوافقي</div>
+                        <div id="metric-thd" class="text-sm font-extrabold font-mono text-amber-400">-- %</div>
+                    </div>
+                    <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-2.5 text-center">
+                        <div class="text-[10px] text-slate-400 mb-0.5">نطاق التسريب</div>
+                        <div id="metric-ultrasonic" class="text-sm font-extrabold font-mono text-cyan-300">طبيعي</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أوضاع المعايرة المسبقة للفحص الهندسي -->
+            <div class="glass-panel rounded-2xl p-4">
+                <h3 class="text-xs font-bold text-slate-300 mb-2.5">تخصيص حساسية المستشعر حسب الهدف:</h3>
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="setInspectionMode('engine', this)" class="mode-preset-btn neon-border-active p-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-center transition active:scale-95">
+                        <div class="text-lg mb-0.5">⚙️</div>
+                        <div class="text-xs font-bold text-white">محركات ومضخات</div>
+                        <div class="text-[10px] text-slate-400">50Hz - 1.5kHz</div>
+                    </button>
+                    <button onclick="setInspectionMode('leak', this)" class="mode-preset-btn p-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-center transition active:scale-95">
+                        <div class="text-lg mb-0.5">💨</div>
+                        <div class="text-xs font-bold text-white">تسريب هواء/غاز</div>
+                        <div class="text-[10px] text-slate-400">4kHz - 20kHz</div>
+                    </button>
+                    <button onclick="setInspectionMode('electric', this)" class="mode-preset-btn p-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-center transition active:scale-95">
+                        <div class="text-lg mb-0.5">⚡</div>
+                        <div class="text-xs font-bold text-white">طنين كهربائي</div>
+                        <div class="text-[10px] text-slate-400">50Hz / 60Hz / 120Hz</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 2. تبويب: راسم الذبذبات الحقيقي ومحلل الطيف ثلاثي الأبعاد -->
+        <!-- ========================================================= -->
+        <section id="tab-scope" class="tab-view hidden space-y-4">
+            <!-- راسم الذبذبات Oscilloscope -->
+            <div class="glass-panel rounded-2xl p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <div>
+                        <h2 class="text-sm font-bold text-white">راسم الذبذبات الحي (Oscilloscope)</h2>
+                        <p class="text-[11px] text-slate-400">التمثيل الزمني المباشر للموجة الصوتية</p>
+                    </div>
+                    <div class="text-left">
+                        <span id="scope-freq-readout" class="font-mono text-sm font-extrabold text-cyan-400 neon-text-cyan">0.0 Hz</span>
+                        <span id="scope-note-readout" class="block text-[10px] font-mono text-slate-400">النغمة: --</span>
+                    </div>
+                </div>
+                <div class="canvas-container h-40">
+                    <canvas id="oscilloscope-canvas"></canvas>
+                </div>
+            </div>
+
+            <!-- محلل الطيف الشلالي Waterfall Spectrogram -->
+            <div class="glass-panel rounded-2xl p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <div>
+                        <h2 class="text-sm font-bold text-white">محلل الطيف الشلالي (3D Waterfall)</h2>
+                        <p class="text-[11px] text-slate-400">خريطة حرارية لتوزيع الترددات عبر الزمن</p>
+                    </div>
+                    <span id="scope-db-readout" class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 font-mono text-xs border border-cyan-500/30">-90 dB</span>
+                </div>
+                <div class="canvas-container h-48">
+                    <canvas id="waterfall-canvas"></canvas>
+                </div>
+                <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5 px-1">
+                    <span>20 Hz (جهير)</span>
+                    <span>1 kHz</span>
+                    <span>8 kHz</span>
+                    <span>20 kHz (فوق سمعي)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 3. تبويب: مولد الترددات الدقيق وطارد الماء والغبار         -->
+        <!-- ========================================================= -->
+        <section id="tab-generator" class="tab-view hidden space-y-4">
+            <div class="glass-panel rounded-2xl p-4 space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-white">مولد الترددات الفيزيائي الدقيق</h2>
+                        <p class="text-[11px] text-slate-400">توليد موجات نقية من 20Hz إلى 20,000Hz</p>
+                    </div>
+                    <button id="gen-power-btn" onclick="toggleGenerator()" class="px-4 py-2 rounded-xl font-bold text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow-lg shadow-cyan-500/30 active:scale-95 transition">
+                        ▶ تشغيل المولد
+                    </button>
+                </div>
+
+                <!-- شاشة عرض التردد الضخمة -->
+                <div class="bg-slate-950/90 border border-cyan-500/30 rounded-2xl p-4 text-center relative">
+                    <div class="text-[11px] text-slate-400 mb-1">التردد الحالي المُولَّد</div>
+                    <div class="flex items-baseline justify-center gap-1.5" dir="ltr">
+                        <span id="gen-freq-display" class="text-4xl font-black font-mono text-cyan-400 neon-text-cyan">432</span>
+                        <span class="text-sm font-bold text-slate-400">Hz</span>
+                    </div>
+                    <!-- أزرار الضبط الدقيق +/- -->
+                    <div class="flex items-center justify-center gap-3 mt-3">
+                        <button onclick="adjustFrequency(-10)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono font-bold text-slate-200 active:scale-95">-10</button>
+                        <button onclick="adjustFrequency(-1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono font-bold text-slate-200 active:scale-95">-1</button>
+                        <button onclick="adjustFrequency(1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono font-bold text-slate-200 active:scale-95">+1</button>
+                        <button onclick="adjustFrequency(10)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono font-bold text-slate-200 active:scale-95">+10</button>
+                    </div>
+                </div>
+
+                <!-- شريط التمرير اللوغاريتمي للتردد -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between text-[11px] text-slate-400">
+                        <span>التحكم الانسيابي بالتردد</span>
+                        <span id="gen-band-label" class="text-cyan-300 font-bold">نطاق متوسط (تأمل ورنين)</span>
+                    </div>
+                    <input type="range" id="freq-slider" min="0" max="1000" value="440" oninput="onSliderInput(this.value)">
+                </div>
+
+                <!-- اختيار شكل الموجة -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-2">شكل الموجة الفيزيائية (Waveform):</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setWaveform('sine', this)" class="wave-btn neon-border-active py-2.5 px-2 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-white transition">
+                            〰️ جيبية (Sine)
+                        </button>
+                        <button onclick="setWaveform('square', this)" class="wave-btn py-2.5 px-2 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-slate-300 transition">
+                            ⎍ مربعة (Square)
+                        </button>
+                        <button onclick="setWaveform('triangle', this)" class="wave-btn py-2.5 px-2 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-slate-300 transition">
+                            📐 مثلثية (Triangle)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- برامج ذكية جاهزة (تنظيف السماعة، طرد الحشرات، اختبار السماعات) -->
+            <div class="glass-panel rounded-2xl p-4 space-y-2.5">
+                <h3 class="text-xs font-bold text-slate-300">برامج الرنين الذكية بلمسة واحدة:</h3>
+                <div class="grid grid-cols-2 gap-2.5">
+                    <button onclick="startWaterEject()" id="water-eject-btn" class="p-3 rounded-xl bg-gradient-to-br from-sky-900/60 to-blue-950/80 border border-sky-500/30 text-right hover:border-sky-400 transition active:scale-95">
+                        <div class="text-lg mb-1">💧</div>
+                        <div class="text-xs font-bold text-white">طرد الماء والغبار</div>
+                        <div class="text-[10px] text-sky-300 mt-0.5">نبضات رنين 165Hz لتنظيف السماعة</div>
+                    </button>
+
+                    <button onclick="applyPresetFreq(17500, 'sine', 'تردد فوق سمعي طارد للبعوض')" class="p-3 rounded-xl bg-gradient-to-br from-emerald-900/50 to-teal-950/80 border border-emerald-500/30 text-right hover:border-emerald-400 transition active:scale-95">
+                        <div class="text-lg mb-1">🦟</div>
+                        <div class="text-xs font-bold text-white">طارد البعوض (17.5kHz)</div>
+                        <div class="text-[10px] text-emerald-300 mt-0.5">موجات عالية التردد غير مزعجة</div>
+                    </button>
+
+                    <button onclick="applyPresetFreq(432, 'sine', 'تردد الاسترخاء الطبيعي 432Hz')" class="p-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-indigo-950/80 border border-purple-500/30 text-right hover:border-purple-400 transition active:scale-95">
+                        <div class="text-lg mb-1">🧘</div>
+                        <div class="text-xs font-bold text-white">تردد الصفاء 432Hz</div>
+                        <div class="text-[10px] text-purple-300 mt-0.5">موجة جيبية نقية للتركيز والهدوء</div>
+                    </button>
+
+                    <button onclick="startSweepTest()" id="sweep-btn" class="p-3 rounded-xl bg-gradient-to-br from-amber-900/50 to-orange-950/80 border border-amber-500/30 text-right hover:border-amber-400 transition active:scale-95">
+                        <div class="text-lg mb-1">🔊</div>
+                        <div class="text-xs font-bold text-white">فحص شامل للسماعات</div>
+                        <div class="text-[10px] text-amber-300 mt-0.5">مسح متدرج 20Hz ← 18kHz</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- 4. تبويب: مقياس صدى الغرفة والعزل الصوتي (RT60)          -->
+        <!-- ========================================================= -->
+        <section id="tab-room" class="tab-view hidden space-y-4">
+            <div class="glass-panel rounded-2xl p-4 space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold text-white">مقياس صدى الغرفة والعزل الصوتي</h2>
+                        <p class="text-[11px] text-slate-400">حساب زمن الارتداد الصوتي (RT60) وجودة العزل</p>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-lg bg-cyan-500/15 border border-cyan-500/30 text-[11px] font-bold text-cyan-300">مختبر صوتي</span>
+                </div>
+
+                <!-- بطاقة النتيجة الرئيسية -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-3.5 text-center">
+                        <div class="text-[11px] text-slate-400 mb-1">الضوضاء الخلفية الحالية</div>
+                        <div id="room-noise-db" class="text-2xl font-black font-mono text-emerald-400">-- dB</div>
+                        <div id="room-noise-label" class="text-[10px] text-slate-400 mt-1">في انتظار القياس</div>
+                    </div>
+                    <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-3.5 text-center">
+                        <div class="text-[11px] text-slate-400 mb-1">زمن الصدى (RT60)</div>
+                        <div id="room-rt60-val" class="text-2xl font-black font-mono text-cyan-400">-- ثانية</div>
+                        <div id="room-acoustic-grade" class="text-[10px] text-slate-400 mt-1">اضغط لبدء اختبار النبضة</div>
+                    </div>
+                </div>
+
+                <!-- رسم بياني لاضمحلال الصدى -->
+                <div class="canvas-container h-36">
+                    <canvas id="echo-canvas"></canvas>
+                </div>
+
+                <!-- زر إطلاق نبضة قياس الصدى -->
+                <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5 space-y-3">
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong class="text-cyan-400">طريقة القياس الذكية:</strong> سيقوم التطبيق بإصدار نبضة صوتية قصيرة عالية الطاقة ثم الاستماع عبر الميكروفون لقياس سرعة تلاشي الصدى في الغرفة وتقييم صلاحيتها للتسجيل أو النوم.
+                    </p>
+                    <button id="measure-echo-btn" onclick="measureRoomEcho()" class="w-full py-3 rounded-xl font-extrabold text-sm bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 shadow-lg shadow-emerald-500/25 active:scale-95 transition">
+                        🎙️ إطلاق نبضة وقياس صدى الغرفة الآن
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- شريط التنقل السفلي الثابت (Bottom Navigation Bar) -->
+    <nav class="fixed bottom-0 inset-x-0 z-40 glass-nav px-2 py-2">
+        <div class="max-w-2xl mx-auto grid grid-cols-4 gap-1">
+            <button onclick="switchTab('fault', this)" class="nav-btn active-nav flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-cyan-400 bg-cyan-500/15 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span class="text-[11px] font-bold">كاشف الأعطال</span>
+            </button>
+
+            <button onclick="switchTab('scope', this)" class="nav-btn flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-slate-400 hover:text-slate-200 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg>
+                <span class="text-[11px] font-bold">راسم الذبذبات</span>
+            </button>
+
+            <button onclick="switchTab('generator', this)" class="nav-btn flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-slate-400 hover:text-slate-200 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+                <span class="text-[11px] font-bold">مولد الترددات</span>
+            </button>
+
+            <button onclick="switchTab('room', this)" class="nav-btn flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-slate-400 hover:text-slate-200 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <span class="text-[11px] font-bold">عزل الغرفة</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- نافذة "حول التطبيق" المنبثقة (About Modal) -->
+    <div id="about-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-md p-4">
+        <div class="glass-panel rounded-3xl max-w-md w-full p-6 border border-cyan-400/30 shadow-2xl space-y-4 relative">
+            <button onclick="closeAboutModal()" class="absolute top-4 left-4 w-8 h-8 rounded-full bg-slate-800/80 text-slate-300 flex items-center justify-center hover:text-white">✕</button>
+            
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg">
+                    📡
+                </div>
+                <div>
+                    <h3 class="text-lg font-extrabold text-white">الرادار الصوتي الخفي</h3>
+                    <p class="text-xs text-cyan-400">مختبر التحليل الفيزيائي والصوتي الذكي</p>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+                يحوّل هذا التطبيق الميكروفون ومكبر الصوت في هاتفك الذكي إلى أداة تشخيص هندسية وصوتية متكاملة باستخدام خوارزميات تحويل فورييه السريع (FFT) ومعالجة الإشارات الرقمية في الوقت الفعلي.
+            </p>
+
+            <ul class="text-xs text-slate-300 space-y-1.5 bg-slate-900/70 p-3.5 rounded-2xl border border-slate-800">
+                <li>🔹 كشف التسريبات الهوائية واهتزازات المحركات غير المسموعة.</li>
+                <li>🔹 راسم ذبذبات حي ومحلل طيفي شلالي ثلاثي الأبعاد.</li>
+                <li>🔹 مولد موجات نقية لطرد الماء من السماعات واختبار الترددات.</li>
+                <li>🔹 قياس زمن ارتداد الصدى (RT60) وتقييم العزل الصوتي للغرف.</li>
+            </ul>
+
+            <!-- التوقيع الأنيق في أسفل شاشة حول التطبيق -->
+            <div class="pt-3 border-t border-slate-800/90 text-center">
+                <p class="text-[11px] tracking-wide text-slate-400 font-medium">
+                    تصميم <span class="text-cyan-300/90 font-semibold">خضر بركات ابو صالحة</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- محرك المعالجة الصوتية والرسوم البيانية (JavaScript Core)   -->
+    <!-- ========================================================= -->
+    <script>
+        // المتغيرات العامة لنظام الصوت
+        let audioCtx = null;
+        let analyser = null;
+        let micStream = null;
+        let isMicActive = false;
+        let animationFrameId = null;
+
+        // متغيرات مولد الترددات
+        let oscillator = null;
+        let gainNode = null;
+        let isGeneratorActive = false;
+        let currentFreq = 432;
+        let currentWaveform = 'sine';
+        let sweepInterval = null;
+        let waterInterval = null;
+
+        // متغيرات أوضاع الفحص
+        let inspectionMode = 'engine'; // 'engine' | 'leak' | 'electric'
+        let activeTab = 'fault';
+        let radarAngle = 0;
+        let lastVibrationTime = 0;
+        let recentPeaks = [];
+        let echoDecayHistory = [];
+
+        // تهيئة عناصر الـ Canvas وضبط أبعادها بدقة الشاشة (Retina DPI)
+        const canvases = {
+            radar: document.getElementById('radar-canvas'),
+            oscilloscope: document.getElementById('oscilloscope-canvas'),
+            waterfall: document.getElementById('waterfall-canvas'),
+            echo: document.getElementById('echo-canvas')
+        };
+
+        function resizeAllCanvases() {
+            Object.values(canvases).forEach(canvas => {
+                if (!canvas) return;
+                const rect = canvas.parentElement.getBoundingClientRect();
+                if (rect.width > 0 && rect.height > 0) {
+                    const dpr = window.devicePixelRatio || 1;
+                    canvas.width = rect.width * dpr;
+                    canvas.height = rect.height * dpr;
+                    const ctx = canvas.getContext('2d');
+                    ctx.scale(dpr, dpr);
+                }
+            });
+            drawInitialIdleScreens();
+        }
+
+        window.addEventListener('resize', resizeAllCanvases);
+        window.addEventListener('load', () => {
+            resizeAllCanvases();
+            updateSliderFromFreq(432);
+        });
+
+        // تهيئة AudioContext عند أول تفاعل للمستخدم
+        function ensureAudioContext() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            document.getElementById('sample-rate-badge').textContent = (audioCtx.sampleRate / 1000).toFixed(1) + ' kHz';
+        }
+
+        // تحديث شريط التنبيه العلوي
+        function updateStatusBanner(msg, type = 'info') {
+            const banner = document.getElementById('status-banner');
+            const textEl = document.getElementById('status-banner-text');
+            textEl.textContent = msg;
+            banner.classList.remove('border-r-cyan-400', 'border-r-emerald-400', 'border-r-rose-500', 'border-r-amber-400');
+            if (type === 'success') banner.classList.add('border-r-emerald-400');
+            else if (type === 'danger') banner.classList.add('border-r-rose-500');
+            else if (type === 'warn') banner.classList.add('border-r-amber-400');
+            else banner.classList.add('border-r-cyan-400');
+        }
+
+        // ===== طبقة توافق الميكروفون مع WebView أندرويد =====
+        // طلب صلاحية RECORD_AUDIO الأصلية عبر الجسور المعروفة (إن وُجدت)
+        function requestNativeMicPermission() {
+            return new Promise(resolve => {
+                let done = false;
+                const finish = v => { if (!done) { done = true; resolve(v); } };
+                setTimeout(() => finish(true), 4000); // لا نعلّق أبداً
+                try {
+                    // Cordova: cordova-plugin-android-permissions
+                    const cp = window.cordova && window.cordova.plugins && window.cordova.plugins.permissions;
+                    if (cp && cp.requestPermission) {
+                        cp.requestPermission(cp.RECORD_AUDIO || 'android.permission.RECORD_AUDIO',
+                            st => finish(st && st.hasPermission !== false), () => finish(false));
+                        return;
+                    }
+                    // جسور شائعة تحقنها منصات التحويل (WebView JavascriptInterface)
+                    const bridges = [window.Android, window.AndroidInterface, window.AndroidBridge, window.AppInterface];
+                    for (const b of bridges) {
+                        if (!b) continue;
+                        const fn = b.requestMicrophonePermission || b.requestAudioPermission || b.requestPermissions || b.requestMicPermission;
+                        if (typeof fn === 'function') {
+                            try { fn.call(b, 'android.permission.RECORD_AUDIO'); } catch (e) {}
+                            setTimeout(() => finish(true), 1200);
+                            return;
+                        }
+                    }
+                } catch (e) {}
+                finish(true);
+            });
+        }
+
+        // getUserMedia مع دعم الواجهات القديمة
+        function getMicStream(constraints) {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                return navigator.mediaDevices.getUserMedia(constraints);
+            }
+            const legacy = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+            if (legacy) {
+                return new Promise((res, rej) => legacy.call(navigator, constraints, res, rej));
+            }
+            const e = new Error('mediaDevices unavailable');
+            e.name = 'NoMediaDevices';
+            return Promise.reject(e);
+        }
+
+        async function openMicStream() {
+            const strict = { audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } };
+            try {
+                return await getMicStream(strict);
+            } catch (err) {
+                // بعض أجهزة WebView ترفض القيود الدقيقة: نعيد المحاولة بقيود بسيطة
+                if (err && (err.name === 'OverconstrainedError' || err.name === 'ConstraintNotSatisfiedError' || err.name === 'TypeError')) {
+                    return await getMicStream({ audio: true });
+                }
+                throw err;
+            }
+        }
+
+        function showMicHelp(err) {
+            const name = (err && err.name) || 'Error';
+            let title = 'تعذر تشغيل الميكروفون';
+            let body = '';
+            if (name === 'NotAllowedError' || name === 'PermissionDeniedError' || name === 'SecurityError') {
+                title = 'صلاحية الميكروفون مرفوضة';
+                body = 'اذهب إلى: إعدادات الهاتف ← التطبيقات ← هذا التطبيق ← الأذونات ← الميكروفون ← اختر «السماح أثناء استخدام التطبيق»، ثم ارجع واضغط «إعادة المحاولة».<br><span class="text-slate-400">إن لم يظهر الميكروفون في قائمة الأذونات فمنصة التحويل لم تضف الصلاحية للتطبيق (RECORD_AUDIO) — فعّلها من إعدادات المشروع في المنصة وأعد بناء التطبيق.</span>';
+            } else if (name === 'NoMediaDevices') {
+                title = 'المتصفح الداخلي لا يدعم الميكروفون هنا';
+                body = 'يحدث هذا عندما يُحمَّل التطبيق من رابط <b>http</b> غير آمن. استخدم رابط <b>https</b> أو ملفاً محلياً مضمّناً داخل التطبيق، وفعّل خيار «الميكروفون / Microphone» في إعدادات المنصة.';
+            } else if (name === 'NotFoundError' || name === 'DevicesNotFoundError') {
+                title = 'لم يُعثر على ميكروفون';
+                body = 'تأكد أن الجهاز فيه ميكروفون يعمل وأنه غير محجوب.';
+            } else if (name === 'NotReadableError' || name === 'TrackStartError' || name === 'AbortError') {
+                title = 'الميكروفون مشغول';
+                body = 'أغلق أي تطبيق يستخدم الميكروفون (مكالمة، تسجيل صوتي، مساعد صوتي) ثم أعد المحاولة.';
+            } else if (name === 'NoResponse') {
+                title = 'التطبيق لم يردّ على طلب الميكروفون';
+                body = 'الصلاحية على الهاتف مفعّلة لكن المتصفح الداخلي لم يفتح الميكروفون. أغلق التطبيق تماماً من قائمة التطبيقات الأخيرة ثم افتحه من جديد وأعد المحاولة.';
+            } else {
+                body = 'خطأ غير متوقع: ' + name + (err && err.message ? ' — ' + err.message : '');
+            }
+            body += '<div class="mt-2 pt-2 border-t border-slate-700 text-[10px] text-slate-500 font-mono" dir="ltr">err=' + name +
+                ' | secure=' + window.isSecureContext +
+                ' | mediaDevices=' + !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) +
+                ' | proto=' + location.protocol + '</div>';
+            document.getElementById('mic-help-title').textContent = title;
+            document.getElementById('mic-help-body').innerHTML = body;
+            document.getElementById('mic-help').classList.remove('hidden');
+        }
+
+        function retryMicrophone() {
+            document.getElementById('mic-help').classList.add('hidden');
+            if (isMicActive) stopMicrophone();
+            toggleMicrophone();
+        }
+
+        // تشغيل أو إيقاف الميكروفون ومحلل الطيف
+        async function toggleMicrophone() {
+            if (isMicActive) {
+                stopMicrophone();
+                return;
+            }
+
+            try {
+                ensureAudioContext();
+                // 1) اطلب الصلاحية الأصلية أولاً (أندرويد) ثم 2) افتح الميكروفون
+                await requestNativeMicPermission();
+                micStream = await Promise.race([
+                    openMicStream(),
+                    new Promise((_, rej) => setTimeout(() => {
+                        const e = new Error('no response from WebView');
+                        e.name = 'NoResponse';
+                        rej(e);
+                    }, 10000))
+                ]);
+                if (audioCtx.state === 'suspended') { await audioCtx.resume(); }
+
+                const source = audioCtx.createMediaStreamSource(micStream);
+                analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 4096; // دقة ترددية عالية جداً
+                analyser.smoothingTimeConstant = 0.82;
+                source.connect(analyser);
+                // بعض نسخ WebView لا تعالج الرسم البياني إلا إذا اتصل بالمخرج: نوصله بعقدة صامتة
+                const silent = audioCtx.createGain();
+                silent.gain.value = 0;
+                analyser.connect(silent);
+                silent.connect(audioCtx.destination);
+
+                document.getElementById('mic-help').classList.add('hidden');
+                isMicActive = true;
+                updateMicUI(true);
+                updateStatusBanner('الرادار نشط: جاري تحليل الطيف الترددي والاهتزازات في الوقت الفعلي.', 'success');
+                startAnalysisLoop();
+            } catch (err) {
+                console.error('Mic error:', err);
+                updateStatusBanner('تعذر الوصول للميكروفون (' + ((err && err.name) || 'خطأ') + ')', 'danger');
+                showMicHelp(err);
+            }
+        }
+
+        function stopMicrophone() {
+            isMicActive = false;
+            if (micStream) {
+                micStream.getTracks().forEach(track => track.stop());
+                micStream = null;
+            }
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            updateMicUI(false);
+            updateStatusBanner('تم إيقاف المسح الصوتي. اضغط لتشغيل الرادار مجدداً.', 'info');
+            drawInitialIdleScreens();
+        }
+
+        function updateMicUI(active) {
+            const btn = document.getElementById('mic-toggle-btn');
+            const dot = document.getElementById('mic-status-indicator');
+            const text = document.getElementById('mic-btn-text');
+            const liveDot = document.getElementById('live-dot');
+
+            if (active) {
+                btn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-300 bg-emerald-500/20 text-emerald-300 border border-emerald-400/50 active:scale-95';
+                dot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+                text.textContent = 'إيقاف الرادار';
+                liveDot.classList.remove('hidden');
+            } else {
+                btn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-300 bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 active:scale-95';
+                dot.className = 'w-2 h-2 rounded-full bg-rose-500';
+                text.textContent = 'تشغيل الرادار';
+                liveDot.classList.add('hidden');
+            }
+        }
+
+        // حلقة التحليل والرسم المستمرة (60 إطار/ثانية)
+        function startAnalysisLoop() {
+            const bufferLength = analyser.frequencyBinCount;
+            const freqData = new Uint8Array(bufferLength);
+            const timeData = new Uint8Array(bufferLength);
+            const floatFreqData = new Float32Array(bufferLength);
+
+            function render() {
+                if (!isMicActive) return;
+
+                analyser.getByteFrequencyData(freqData);
+                analyser.getByteTimeDomainData(timeData);
+                analyser.getFloatFrequencyData(floatFreqData);
+
+                // حساب التردد المهيمن ومستوى الديسيبل RMS
+                const metrics = computeAcousticMetrics(freqData, timeData, floatFreqData);
+
+                // تحديث الواجهة حسب التبويب النشط
+                if (activeTab === 'fault') {
+                    updateFaultDetectorUI(metrics, freqData);
+                    drawRadarCanvas(metrics, freqData);
+                } else if (activeTab === 'scope') {
+                    updateScopeUI(metrics);
+                    drawOscilloscopeCanvas(timeData);
+                    drawWaterfallCanvas(freqData);
+                } else if (activeTab === 'room') {
+                    document.getElementById('room-noise-db').textContent = metrics.db.toFixed(1) + ' dB';
+                    document.getElementById('room-noise-label').textContent = classifyNoiseLevel(metrics.db);
+                }
+
+                animationFrameId = requestAnimationFrame(render);
+            }
+            render();
+        }
+
+        // حساب القياسات الفيزيائية الدقيقة (التردد الأساسي، الطاقة، الاستقرار، التشوه)
+        function computeAcousticMetrics(freqData, timeData, floatFreqData) {
+            const sampleRate = audioCtx.sampleRate;
+            const nyquist = sampleRate / 2;
+            const binWidth = nyquist / freqData.length;
+
+            // حساب RMS من المجال الزمني لتحويله إلى dB تقريبي
+            let sumSquares = 0;
+            for (let i = 0; i < timeData.length; i++) {
+                const normalized = (timeData[i] - 128) / 128;
+                sumSquares += normalized * normalized;
+            }
+            const rms = Math.sqrt(sumSquares / timeData.length);
+            const db = Math.max(-90, Math.min(0, 20 * Math.log10(rms + 1e-6)));
+            // تحويل إلى مقياس SPL تقديري للهاتف (من 30 إلى 110 dB)
+            const splDb = Math.max(25, Math.min(115, Math.round(db + 98)));
+
+            // البحث عن ذروة التردد
+            let maxVal = -1;
+            let maxIndex = 0;
+            let ultrasonicEnergy = 0;
+            let ultrasonicCount = 0;
+
+            for (let i = 2; i < freqData.length; i++) {
+                const freq = i * binWidth;
+                const val = freqData[i];
+                if (val > maxVal) {
+                    maxVal = val;
+                    maxIndex = i;
+                }
+                if (freq >= 6000 && freq <= 20000) {
+                    ultrasonicEnergy += val;
+                    ultrasonicCount++;
+                }
+            }
+
+            const peakFreq = maxVal > 20 ? maxIndex * binWidth : 0;
+            const avgUltrasonic = ultrasonicCount > 0 ? ultrasonicEnergy / ultrasonicCount : 0;
+
+            // حساب استقرار التردد عبر آخر 15 قراءة
+            if (peakFreq > 0) {
+                recentPeaks.push(peakFreq);
+                if (recentPeaks.length > 15) recentPeaks.shift();
+            }
+            let stability = 100;
+            if (recentPeaks.length > 3) {
+                const avg = recentPeaks.reduce((a, b) => a + b, 0) / recentPeaks.length;
+                const variance = recentPeaks.reduce((a, b) => a + Math.abs(b - avg), 0) / recentPeaks.length;
+                stability = Math.max(0, Math.min(100, Math.round(100 - (variance / (avg + 1)) * 120)));
+            }
+
+            // تقدير نسبة التوافقيات (THD التقريبي)
+            let harmonicEnergy = 0;
+            if (maxIndex > 4 && maxVal > 30) {
+                for (let h = 2; h <= 5; h++) {
+                    const hIdx = maxIndex * h;
+                    if (hIdx < freqData.length) {
+                        harmonicEnergy += freqData[hIdx];
+                    }
+                }
+            }
+            const thd = maxVal > 30 ? Math.min(99, Math.round((harmonicEnergy / (maxVal * 2.5)) * 100)) : 0;
+
+            return {
+                peakFreq,
+                maxVal,
+                db,
+                splDb,
+                stability,
+                thd,
+                avgUltrasonic
+            };
+        }
+
+        // تحديث واجهة كاشف الأعطال والتسريبات
+        function updateFaultDetectorUI(m, freqData) {
+            document.getElementById('fault-peak-freq').textContent = m.peakFreq > 0 ? Math.round(m.peakFreq) + ' Hz' : '0 Hz';
+            document.getElementById('fault-db').textContent = m.splDb + ' dB';
+            document.getElementById('metric-stability').textContent = m.peakFreq > 0 ? m.stability + '%' : '-- %';
+            document.getElementById('metric-thd').textContent = m.peakFreq > 0 ? m.thd + '%' : '-- %';
+
+            const diagEl = document.getElementById('fault-diagnosis-text');
+            const badgeEl = document.getElementById('fault-risk-badge');
+            const ultraEl = document.getElementById('metric-ultrasonic');
+
+            let anomalyDetected = false;
+            let diagnosis = 'بيئة صوتية مستقرة - لا توجد أعطال واضحة';
+            let badgeText = 'سليم ومستقر';
+            let badgeClass = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+
+            if (m.maxVal < 35) {
+                diagnosis = 'هدوء نسبي - قرّب الهاتف من مصدر الصوت';
+                badgeText = 'إشارة منخفضة';
+                badgeClass = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700';
+                ultraEl.textContent = 'هادئ';
+                ultraEl.className = 'text-sm font-extrabold font-mono text-slate-400';
+            } else if (inspectionMode === 'leak') {
+                if (m.avgUltrasonic > 42 || m.peakFreq > 5500) {
+                    diagnosis = '⚠️ تم رصد صفير عالي التردد! احتمال تسريب هواء/ضغط';
+                    badgeText = 'اشتباه تسريب';
+                    badgeClass = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-500/25 text-rose-300 border border-rose-500/50 animate-pulse';
+                    ultraEl.textContent = 'مرتفع جداً';
+                    ultraEl.className = 'text-sm font-extrabold font-mono text-rose-400';
+                    anomalyDetected = true;
+                } else {
+                    diagnosis = 'لا يوجد تسريب هوائي فوق سمعي في النطاق المفحوص';
+                    ultraEl.textContent = 'آمن';
+                    ultraEl.className = 'text-sm font-extrabold font-mono text-emerald-400';
+                }
+            } else if (inspectionMode === 'engine') {
+                if (m.thd > 45 || (m.peakFreq > 80 && m.peakFreq < 1200 && m.stability < 55)) {
+                    diagnosis = '⚠️ اهتزاز غير منتظم وتوافقيات عالية (احتكاك/تآكل)';
+                    badgeText = 'اهتزاز شاذ';
+                    badgeClass = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-500/25 text-amber-300 border border-amber-500/50';
+                    ultraEl.textContent = 'تذبذب';
+                    ultraEl.className = 'text-sm font-extrabold font-mono text-amber-400';
+                    anomalyDetected = true;
+                } else if (m.peakFreq > 40) {
+                    diagnosis = 'دوران منتظم وتوافق ميكانيكي جيد';
+                    ultraEl.textContent = 'متزن';
+                    ultraEl.className = 'text-sm font-extrabold font-mono text-emerald-400';
+                }
+            } else if (inspectionMode === 'electric') {
+                // فحص ترددات الشبكة الكهربائية 50Hz / 60Hz ومضاعفاتها
+                const isGridHum = (Math.abs(m.peakFreq - 50) < 4) || (Math.abs(m.peakFreq - 60) < 4) || (Math.abs(m.peakFreq - 100) < 5) || (Math.abs(m.peakFreq - 120) < 5);
+                if (isGridHum && m.maxVal > 85) {
+                    diagnosis = '⚡ طنين كهرومغناطيسي قوي (محول أو ملف كهربائي)';
+                    badgeText = 'طنين كهربائي';
+                    badgeClass = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-500/25 text-amber-300 border border-amber-500/50';
+                    ultraEl.textContent = Math.round(m.peakFreq) + 'Hz';
+                    ultraEl.className = 'text-sm font-extrabold font-mono text-amber-400';
+                    anomalyDetected = true;
+                } else {
+                    diagnosis = 'مستوى الطنين الكهربائي ضمن الحدود الطبيعية';
+                    ultraEl.textContent = 'طبيعي';
+                    ultraEl.className = 'text-sm font-extrabold font-mono text-emerald-400';
+                }
+            }
+
+            diagEl.textContent = diagnosis;
+            badgeEl.textContent = badgeText;
+            badgeEl.className = badgeClass;
+
+            // تفعيل الاهتزاز اللطيف عند اكتشاف خلل (بحد أقصى مرة كل ثانيتين)
+            if (anomalyDetected && navigator.vibrate) {
+                const now = Date.now();
+                if (now - lastVibrationTime > 2200) {
+                    navigator.vibrate([80, 50, 80]);
+                    lastVibrationTime = now;
+                }
+            }
+        }
+
+        // رسم الرادار الدائري التفاعلي
+        function drawRadarCanvas(metrics, freqData) {
+            const canvas = canvases.radar;
+            const ctx = canvas.getContext('2d');
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const w = rect.width;
+            const h = rect.height;
+            const cx = w / 2;
+            const cy = h / 2 - 8;
+            const maxR = Math.min(w, h) * 0.38;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // رسم الدوائر الشبكية للرادار
+            ctx.strokeStyle = 'rgba(143, 190, 255, 0.16)';
+            ctx.lineWidth = 1;
+            for (let i = 1; i <= 3; i++) {
+                ctx.beginPath();
+                ctx.arc(cx, cy, (maxR / 3) * i, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // رسم خطوط المحاور المتقاطعة
+            ctx.beginPath();
+            ctx.moveTo(cx - maxR, cy);
+            ctx.lineTo(cx + maxR, cy);
+            ctx.moveTo(cx, cy - maxR);
+            ctx.lineTo(cx, cy + maxR);
+            ctx.stroke();
+
+            // رسم شعاع المسح الدوار
+            radarAngle = (radarAngle + 0.045) % (Math.PI * 2);
+            const grad = ctx.createRadialGradient(cx, cy, 2, cx, cy, maxR);
+            grad.addColorStop(0, 'rgba(143, 190, 255, 0.35)');
+            grad.addColorStop(1, 'rgba(143, 190, 255, 0.0)');
+
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy);
+            ctx.arc(cx, cy, maxR, radarAngle - 0.5, radarAngle);
+            ctx.closePath();
+            ctx.fill();
+
+            // رسم الطيف الدائري حول مركز الرادار
+            const bars = 64;
+            for (let i = 0; i < bars; i++) {
+                const angle = (i / bars) * Math.PI * 2;
+                const val = freqData[i * 3] || 0;
+                const barLen = (val / 255) * (maxR * 0.55);
+                const innerR = maxR * 0.45;
+                const x1 = cx + Math.cos(angle) * innerR;
+                const y1 = cy + Math.sin(angle) * innerR;
+                const x2 = cx + Math.cos(angle) * (innerR + barLen);
+                const y2 = cy + Math.sin(angle) * (innerR + barLen);
+
+                ctx.strokeStyle = val > 160 ? '#ff5a3c' : val > 90 ? '#ffb400' : 'rgba(143, 184, 240, 0.4)';
+                ctx.lineWidth = 2.2;
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+
+            // نقطة المركز المتوهجة
+            ctx.fillStyle = '#ffb400';
+            ctx.beginPath();
+            ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // تحديث قراءات راسم الذبذبات والنوتة الموسيقية
+        function updateScopeUI(m) {
+            document.getElementById('scope-freq-readout').textContent = m.peakFreq > 0 ? m.peakFreq.toFixed(1) + ' Hz' : '0.0 Hz';
+            document.getElementById('scope-db-readout').textContent = m.splDb + ' dB';
+            document.getElementById('scope-note-readout').textContent = 'النغمة: ' + freqToMusicalNote(m.peakFreq);
+        }
+
+        function freqToMusicalNote(freq) {
+            if (!freq || freq < 20) return '--';
+            const noteStrings = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+            const noteNum = 12 * (Math.log(freq / 440) / Math.log(2));
+            const rounded = Math.round(noteNum) + 69;
+            if (rounded < 0 || rounded > 127) return '--';
+            const noteName = noteStrings[rounded % 12];
+            const octave = Math.floor(rounded / 12) - 1;
+            return `${noteName}${octave}`;
+        }
+
+        // رسم راسم الذبذبات Oscilloscope
+        function drawOscilloscopeCanvas(timeData) {
+            const canvas = canvases.oscilloscope;
+            const ctx = canvas.getContext('2d');
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const w = rect.width;
+            const h = rect.height;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // شبكة خلفية خفيفة
+            ctx.strokeStyle = 'rgba(143, 184, 240, 0.08)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, h / 2);
+            ctx.lineTo(w, h / 2);
+            ctx.stroke();
+
+            // رسم الموجة
+            ctx.lineWidth = 2.4;
+            ctx.strokeStyle = '#ffb400';
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = 'rgba(255, 180, 0, 0.75)';
+            ctx.beginPath();
+
+            const sliceWidth = w / (timeData.length / 2);
+            let x = 0;
+
+            for (let i = 0; i < timeData.length / 2; i++) {
+                const v = timeData[i] / 128.0;
+                const y = (v * h) / 2;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+                x += sliceWidth;
+            }
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+        }
+
+        // رسم محلل الطيف الشلالي Waterfall Spectrogram
+        function drawWaterfallCanvas(freqData) {
+            const canvas = canvases.waterfall;
+            const ctx = canvas.getContext('2d');
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const w = rect.width;
+            const h = rect.height;
+            const dpr = window.devicePixelRatio || 1;
+
+            // إزاحة الصورة السابقة للأسفل بمقدار 2 بكسل
+            ctx.drawImage(canvas, 0, 0, w * dpr, (h - 2) * dpr, 0, 2, w, h - 2);
+
+            // رسم السطر العلوي الجديد بمقياس لوغاريتمي للترددات
+            const usableBins = Math.floor(freqData.length * 0.85);
+            for (let x = 0; x < w; x++) {
+                const logRatio = Math.pow(x / w, 2.1);
+                const binIndex = Math.min(usableBins - 1, Math.floor(logRatio * usableBins));
+                const value = freqData[binIndex];
+
+                ctx.fillStyle = getHeatmapColor(value);
+                ctx.fillRect(x, 0, 1.5, 2.5);
+            }
+        }
+
+        function getHeatmapColor(val) {
+            // تدرّج: فحمي ← أزرق فولاذي ← كهرماني ← أصفر ساطع
+            if (val < 20) return '#0d1118';
+            if (val < 90) { const t = (val - 20) / 70; return `rgb(${13 + t * 40 | 0}, ${17 + t * 70 | 0}, ${24 + t * 150 | 0})`; }
+            if (val < 160) { const t = (val - 90) / 70; return `rgb(${53 + t * 150 | 0}, ${87 + t * 60 | 0}, ${174 - t * 120 | 0})`; }
+            if (val < 220) { const t = (val - 160) / 60; return `rgb(${203 + t * 52 | 0}, ${147 + t * 33 | 0}, ${54 - t * 54 | 0})`; }
+            return 'rgb(255, 214, 90)';
+        }
+
+        // الشاشات الافتراضية قبل تشغيل الميكروفون
+        function drawInitialIdleScreens() {
+            if (isMicActive) return;
+            const radar = canvases.radar;
+            if (radar) {
+                const ctx = radar.getContext('2d');
+                const rect = radar.parentElement.getBoundingClientRect();
+                ctx.clearRect(0, 0, rect.width, rect.height);
+                const cx = rect.width / 2;
+                const cy = rect.height / 2 - 8;
+                const maxR = Math.min(rect.width, rect.height) * 0.38;
+                ctx.strokeStyle = 'rgba(143, 190, 255, 0.2)';
+                for (let i = 1; i <= 3; i++) {
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, (maxR / 3) * i, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // =========================================================
+        // 3. منطق مولد الترددات الفيزيائي الدقيق (Frequency Generator)
+        // =========================================================
+        function toggleGenerator() {
+            if (isGeneratorActive) {
+                stopGenerator();
+            } else {
+                startGenerator();
+            }
+        }
+
+        function startGenerator() {
+            ensureAudioContext();
+            stopAllAutomatedSweeps();
+
+            oscillator = audioCtx.createOscillator();
+            gainNode = audioCtx.createGain();
+
+            oscillator.type = currentWaveform;
+            oscillator.frequency.setValueAtTime(currentFreq, audioCtx.currentTime);
+
+            // رفع الصوت بنعومة لتجنب الطقطقة
+            gainNode.gain.setValueAtTime(0.001, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.35, audioCtx.currentTime + 0.08);
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.start();
+
+            isGeneratorActive = true;
+            const btn = document.getElementById('gen-power-btn');
+            btn.textContent = '⏹ إيقاف المولد';
+            btn.className = 'px-4 py-2 rounded-xl font-bold text-xs bg-rose-500 text-white shadow-lg shadow-rose-500/30 active:scale-95 transition';
+            updateStatusBanner(`جاري توليد موجة (${currentWaveform}) بتردد ${currentFreq} Hz`, 'success');
+        }
+
+        function stopGenerator() {
+            stopAllAutomatedSweeps();
+            if (oscillator && gainNode) {
+                try {
+                    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.05);
+                    oscillator.stop(audioCtx.currentTime + 0.06);
+                } catch (e) {}
+                oscillator = null;
+            }
+            isGeneratorActive = false;
+            const btn = document.getElementById('gen-power-btn');
+            btn.textContent = '▶ تشغيل المولد';
+            btn.className = 'px-4 py-2 rounded-xl font-bold text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow-lg shadow-cyan-500/30 active:scale-95 transition';
+        }
+
+        function stopAllAutomatedSweeps() {
+            if (sweepInterval) {
+                clearInterval(sweepInterval);
+                sweepInterval = null;
+            }
+            if (waterInterval) {
+                clearInterval(waterInterval);
+                waterInterval = null;
+            }
+        }
+
+        // تحويل لوغاريتمي لشريط التمرير ليعطي تحكماً دقيقاً في الترددات المنخفضة والعالية
+        function onSliderInput(val) {
+            const minLog = Math.log(20);
+            const maxLog = Math.log(20000);
+            const scale = (maxLog - minLog) / 1000;
+            const freq = Math.round(Math.exp(minLog + scale * val));
+            setFrequency(freq);
+        }
+
+        function updateSliderFromFreq(freq) {
+            const minLog = Math.log(20);
+            const maxLog = Math.log(20000);
+            const scale = (maxLog - minLog) / 1000;
+            const pos = Math.round((Math.log(freq) - minLog) / scale);
+            document.getElementById('freq-slider').value = pos;
+        }
+
+        function setFrequency(freq) {
+            currentFreq = Math.max(20, Math.min(20000, Math.round(freq)));
+            document.getElementById('gen-freq-display').textContent = currentFreq;
+            updateSliderFromFreq(currentFreq);
+            updateBandLabel(currentFreq);
+
+            if (oscillator && isGeneratorActive) {
+                oscillator.frequency.setTargetAtTime(currentFreq, audioCtx.currentTime, 0.015);
+            }
+        }
+
+        function adjustFrequency(delta) {
+            setFrequency(currentFreq + delta);
+        }
+
+        function updateBandLabel(f) {
+            const el = document.getElementById('gen-band-label');
+            if (f < 60) el.textContent = 'جهير عميق جداً (Sub-Bass)';
+            else if (f < 250) el.textContent = 'نطاق الجهير والرنين الميكانيكي';
+            else if (f < 2000) el.textContent = 'نطاق الصوت البشري المتوسط';
+            else if (f < 8000) el.textContent = 'نطاق الوضوح والحدة العالية';
+            else el.textContent = 'نطاق فوق سمعي / ترددات دقيقة';
+        }
+
+        function setWaveform(type, btn) {
+            currentWaveform = type;
+            document.querySelectorAll('.wave-btn').forEach(b => {
+                b.classList.remove('neon-border-active', 'text-white');
+                b.classList.add('text-slate-300');
+            });
+            btn.classList.add('neon-border-active', 'text-white');
+            btn.classList.remove('text-slate-300');
+
+            if (oscillator && isGeneratorActive) {
+                oscillator.type = type;
+            }
+        }
+
+        function applyPresetFreq(freq, wave, label) {
+            currentWaveform = wave;
+            setFrequency(freq);
+            if (!isGeneratorActive) startGenerator();
+            else oscillator.type = wave;
+            updateStatusBanner(`تم تفعيل: ${label}`, 'success');
+        }
+
+        // برنامج طرد الماء والغبار من السماعة عبر نبضات رنين 165Hz
+        function startWaterEject() {
+            ensureAudioContext();
+            if (isGeneratorActive) stopGenerator();
+            currentWaveform = 'sine';
+            setFrequency(165);
+            startGenerator();
+            updateStatusBanner('💧 جاري إرسال نبضات رنين لطرد الماء والغبار لمدة 10 ثوانٍ...', 'warn');
+
+            let toggle = true;
+            let ticks = 0;
+            waterInterval = setInterval(() => {
+                ticks++;
+                if (gainNode && isGeneratorActive) {
+                    toggle = !toggle;
+                    gainNode.gain.setTargetAtTime(toggle ? 0.55 : 0.05, audioCtx.currentTime, 0.03);
+                    setFrequency(toggle ? 165 : 145);
+                }
+                if (ticks >= 25) {
+                    stopGenerator();
+                    updateStatusBanner('✅ اكتملت دورة تنظيف السماعة بنجاح.', 'success');
+                }
+            }, 400);
+        }
+
+        // اختبار المسح الشامل للسماعات (Frequency Sweep)
+        function startSweepTest() {
+            ensureAudioContext();
+            if (isGeneratorActive) stopGenerator();
+            currentWaveform = 'sine';
+            setFrequency(20);
+            startGenerator();
+            updateStatusBanner('🔊 جاري المسح الترددي التصاعدي لاختبار استجابة السماعات...', 'info');
+
+            let step = 0;
+            sweepInterval = setInterval(() => {
+                step += 12;
+                if (step > 1000) {
+                    stopGenerator();
+                    updateStatusBanner('✅ اكتمل اختبار السماعات الشامل.', 'success');
+                    return;
+                }
+                onSliderInput(step);
+            }, 80);
+        }
+
+        // =========================================================
+        // 4. مقياس صدى الغرفة والعزل الصوتي (RT60 Impulse Analyzer)
+        // =========================================================
+        async function measureRoomEcho() {
+            const btn = document.getElementById('measure-echo-btn');
+            btn.disabled = true;
+            btn.textContent = '⏳ جاري إطلاق النبضة وتحليل الارتداد...';
+
+            try {
+                if (!isMicActive) {
+                    await toggleMicrophone();
+                }
+                if (!isMicActive) {
+                    btn.disabled = false;
+                    btn.textContent = '🎙️ إطلاق نبضة وقياس صدى الغرفة الآن';
+                    return;
+                }
+
+                // قياس الضوضاء الخلفية أولاً
+                const timeData = new Uint8Array(analyser.fftSize);
+                analyser.getByteTimeDomainData(timeData);
+                const baselineRms = calculateRMS(timeData);
+
+                // إطلاق نبضة صوتية قصيرة وحادة (Impulse)
+                const pulseOsc = audioCtx.createOscillator();
+                const pulseGain = audioCtx.createGain();
+                pulseOsc.type = 'triangle';
+                pulseOsc.frequency.setValueAtTime(1000, audioCtx.currentTime);
+                pulseGain.gain.setValueAtTime(0.6, audioCtx.currentTime);
+                pulseGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+
+                pulseOsc.connect(pulseGain);
+                pulseGain.connect(audioCtx.destination);
+                pulseOsc.start();
+                pulseOsc.stop(audioCtx.currentTime + 0.13);
+
+                // تسجيل منحنى اضمحلال الصوت لمدة 1.2 ثانية
+                echoDecayHistory = [];
+                const startTime = performance.now();
+                const duration = 1200;
+
+                const sampleDecay = setInterval(() => {
+                    const elapsed = performance.now() - startTime;
+                    analyser.getByteTimeDomainData(timeData);
+                    const currentRms = calculateRMS(timeData);
+                    const dbLevel = Math.max(25, Math.min(110, Math.round(20 * Math.log10(currentRms + 1e-6) + 98)));
+                    echoDecayHistory.push({ t: elapsed, db: dbLevel });
+                    drawEchoDecayCanvas();
+
+                    if (elapsed >= duration) {
+                        clearInterval(sampleDecay);
+                        finalizeRoomReport(baselineRms);
+                        btn.disabled = false;
+                        btn.textContent = '🎙️ إعادة قياس صدى الغرفة';
+                    }
+                }, 30);
+
+            } catch (e) {
+                btn.disabled = false;
+                btn.textContent = '🎙️ إطلاق نبضة وقياس صدى الغرفة الآن';
+            }
+        }
+
+        function calculateRMS(timeData) {
+            let sum = 0;
+            for (let i = 0; i < timeData.length; i++) {
+                const n = (timeData[i] - 128) / 128;
+                sum += n * n;
+            }
+            return Math.sqrt(sum / timeData.length);
+        }
+
+        function finalizeRoomReport(baselineRms) {
+            const baseDb = Math.max(28, Math.min(95, Math.round(20 * Math.log10(baselineRms + 1e-6) + 98)));
+            document.getElementById('room-noise-db').textContent = baseDb + ' dB';
+            document.getElementById('room-noise-label').textContent = classifyNoiseLevel(baseDb - 98);
+
+            // حساب زمن التلاشي التقريبي RT60 بناءً على انحدار المنحنى
+            let peakDb = 0;
+            let peakIdx = 0;
+            echoDecayHistory.forEach((pt, idx) => {
+                if (pt.db > peakDb) {
+                    peakDb = pt.db;
+                    peakIdx = idx;
+                }
+            });
+
+            let dropTimeMs = 450;
+            for (let i = peakIdx; i < echoDecayHistory.length; i++) {
+                if (echoDecayHistory[i].db <= peakDb - 15) {
+                    dropTimeMs = echoDecayHistory[i].t - echoDecayHistory[peakIdx].t;
+                    break;
+                }
+            }
+
+            // استقراء RT60 (زمن هبوط 60dB)
+            const rt60 = Math.max(0.18, Math.min(2.4, ((dropTimeMs / 1000) * 3.2))).toFixed(2);
+            document.getElementById('room-rt60-val').textContent = rt60 + ' ثانية';
+
+            const gradeEl = document.getElementById('room-acoustic-grade');
+            if (rt60 < 0.45) {
+                gradeEl.textContent = 'ممتاز (معزول ومناسب للتسجيل)';
+                gradeEl.className = 'text-[10px] text-emerald-400 font-bold mt-1';
+            } else if (rt60 < 0.85) {
+                gradeEl.textContent = 'متوسط (غرفة معيشة طبيعية)';
+                gradeEl.className = 'text-[10px] text-cyan-300 font-bold mt-1';
+            } else {
+                gradeEl.textContent = 'صدى مرتفع (يحتاج امتصاص صوتي)';
+                gradeEl.className = 'text-[10px] text-amber-400 font-bold mt-1';
+            }
+
+            updateStatusBanner(`اكتمل التحليل: زمن الصدى RT60 = ${rt60} ثانية | الضوضاء = ${baseDb} dB`, 'success');
+        }
+
+        function drawEchoDecayCanvas() {
+            const canvas = canvases.echo;
+            const ctx = canvas.getContext('2d');
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const w = rect.width;
+            const h = rect.height;
+
+            ctx.clearRect(0, 0, w, h);
+            if (echoDecayHistory.length < 2) return;
+
+            ctx.strokeStyle = '#10b981';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+
+            echoDecayHistory.forEach((pt, idx) => {
+                const x = (pt.t / 1200) * w;
+                const y = h - ((pt.db - 25) / 85) * h;
+                if (idx === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+        }
+
+        function classifyNoiseLevel(rawDb) {
+            const spl = Math.round(rawDb + 98);
+            if (spl < 40) return 'هادئ جداً (مثالي للنوم والتركيز)';
+            if (spl < 58) return 'هدوء طبيعي (مكتبة / منزل)';
+            if (spl < 75) return 'ضوضاء متوسطة (محادثة / مكتب)';
+            return 'ضوضاء مرتفعة (يُنصح بالعزل)';
+        }
+
+        // =========================================================
+        // التنقل بين التبويبات وإدارة النوافذ
+        // =========================================================
+        function switchTab(tabName, btnEl) {
+            activeTab = tabName;
+
+            // إخفاء جميع الأقسام وإظهار القسم المختار
+            document.querySelectorAll('.tab-view').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+            // تحديث أزرار الشريط السفلي
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-cyan-400', 'bg-cyan-500/15');
+                btn.classList.add('text-slate-400');
+            });
+            btnEl.classList.remove('text-slate-400');
+            btnEl.classList.add('text-cyan-400', 'bg-cyan-500/15');
+
+            // إعادة ضبط أبعاد الـ Canvas للتبويب الجديد
+            setTimeout(resizeAllCanvases, 30);
+        }
+
+        function setInspectionMode(mode, btnEl) {
+            inspectionMode = mode;
+            recentPeaks = [];
+            document.querySelectorAll('.mode-preset-btn').forEach(b => b.classList.remove('neon-border-active'));
+            btnEl.classList.add('neon-border-active');
+
+            const labels = {
+                engine: 'وضع فحص المحركات والمضخات: مراقبة التوافقيات والاهتزازات.',
+                leak: 'وضع كشف التسريبات: تركيز عالٍ على الترددات فوق السمعية والصفير.',
+                electric: 'وضع فحص الطنين الكهربائي: مراقبة ترددات 50Hz / 60Hz ومضاعفاتها.'
+            };
+            updateStatusBanner(labels[mode], 'info');
+        }
+
+        function openAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAboutModal() {
+            const modal = document.getElementById('about-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
