@@ -1,0 +1,7 @@
+{
+  "appId": "com.khidr.acousticradar",
+  "appName": "الرادار الصوتي",
+  "webDir": "www",
+  "backgroundColor": "#12151b",
+  "android": { "allowMixedContent": false }
+}
